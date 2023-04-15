@@ -1,0 +1,36 @@
+@mixin df($direction:falce,$align:falce) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    
+    @if $direction {
+        flex-direction: $direction;
+    } @else{
+        flex-direction: row;
+    }
+
+    @if $align {
+        align-items: $align;
+    } @else{
+        align-items: flex-start;
+    }
+}
+
+@mixin button($pointer,$color,$brad) {
+    cursor: $pointer;
+    border: none;
+    outline: none;
+    border-radius: $brad;
+    background-color: $color;
+    &:active{
+        transform: scale(1.1);
+        transition: all ease 0.8;
+    }
+}
+
+@mixin bgi() {
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+   
+}
